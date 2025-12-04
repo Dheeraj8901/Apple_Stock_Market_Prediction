@@ -1,9 +1,8 @@
-
 # Apple Stock Price Prediction (2012–2019)
 
 Time-Series Forecasting | ARIMA | SARIMA | XGBoost | Streamlit Deployment
 
- *Project Overview
+🔍 Project Overview
 
 This project aims to predict Apple’s stock price for the next 30+ business days using historical stock price data (2012–2019).
 It includes:
@@ -22,7 +21,7 @@ It includes:
 
 🔹 Exportable predictions and visualizations
 
-* 1. Dataset Information
+📊 1. Dataset Information
 
 Source: Apple OHLCV Data (2012–2019)
 Attributes:
@@ -35,12 +34,11 @@ Low	Daily low
 Close	Final price
 Adj Close	Adjusted close
 Volume	Shares traded
+🧹 2. Data Preprocessing & Feature Engineering
 
-* 2. Data Preprocessing & Feature Engineering
-
-Converted “Date” into proper DatetimeIndex
-Sorted data & removed invalid dates
-Computed:
+✔ Converted “Date” into proper DatetimeIndex
+✔ Sorted data & removed invalid dates
+✔ Computed:
 
 Daily returns
 
@@ -50,11 +48,10 @@ Log returns
 
 21-day rolling volatility
 
- Outlier handling using IQR capping
- Business-day reindexing with forward-fill for missing trading days
+✔ Outlier handling using IQR capping
+✔ Business-day reindexing with forward-fill for missing trading days
 
-* 3. Exploratory Data Analysis (EDA)
-  
+📈 3. Exploratory Data Analysis (EDA)
 🔹 Trend Analysis
 
 Strong long-term upward trend in Apple prices
@@ -77,17 +74,17 @@ OHLC prices almost perfectly correlated
 
 Volume negatively correlated with price
 
-* 4. Model Development
+🤖 4. Model Development
 
 Three forecasting models were evaluated:
 
-1) ARIMA (1,1,1)
+1️⃣ ARIMA (1,1,1)
 
 Baseline time-series model
 
 Moderate performance
 
-2) SARIMA (1,1,1)(1,1,1,5)
+2️⃣ SARIMA (1,1,1)(1,1,1,5)
 
 Weekly seasonality (5 trading days)
 
@@ -101,7 +98,7 @@ MAE: 6.85
 
 MAPE: ~2.46%
 
-3) XGBoost Regressor
+3️⃣ XGBoost Regressor
 
 Used lag features + rolling features
 
@@ -109,14 +106,14 @@ Underperformed due to limited feature complexity
 
 Could not capture sudden upward trend
 
-* Why SARIMA Won?
+🥇 Why SARIMA Won?
 
 ✔ Captures trend
 ✔ Captures weekly seasonality
 ✔ Handles financial time series smoothly
 ✔ Lower error metrics
 
-* 5. Final Forecast (Refit on Full Data)
+🎯 5. Final Forecast (Refit on Full Data)
 
 The SARIMA model was retrained on the full dataset and used to predict the next 30–200 business days.
 
@@ -128,7 +125,7 @@ Predicted close prices
 
 Business-day-based future index
 
-* 6. Streamlit Deployment
+💻 6. Streamlit Deployment
 
 The web app includes:
 
@@ -141,7 +138,8 @@ The web app includes:
 ✔ "Verify with Colab" section to ensure same predictions
 ✔ Clean and interactive UI
 
-* 7. How to Run the App
+
+▶️ 7. How to Run the App
 Install dependencies:
 pip install streamlit pandas numpy statsmodels matplotlib
 
@@ -150,7 +148,7 @@ streamlit run app.py
 
 
 
-* 8. Results
+📦 8. Results
 
 SARIMA produced the most accurate predictions
 
@@ -160,7 +158,7 @@ Deployment allows interactive forecasting
 
 Predictions match exactly with Colab notebook
 
-* 9. Future Enhancements
+🚀 9. Future Enhancements
 
 Include LSTM / Prophet for comparison
 
